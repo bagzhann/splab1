@@ -3,5 +3,6 @@
 # run this script as "top10 log.txt"
 
 # here comes your solution
+cut -f1,4 -d" " log.txt | grep -v "-" | uniq -c | sort -nr | cut -f7,9 -d" " |cut -d: -f1 | tr --delete [ | head -10  | awk '{print $2,"-",$1,"-",$1/20*100,"%"}'
 # e.g.
 grep world $1
